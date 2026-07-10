@@ -1,0 +1,52 @@
+.
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── Makefile
+├── README.md
+├── data
+│   ├── processed
+│   └── raw
+│       └── BTCUSD_OHLC.csv
+├── docs
+├── models
+├── notebooks
+├── pyproject.toml
+├── reports
+│   └── figures
+├── src
+│   └── bitchaser
+│       ├── __init__.py
+│       ├── config.py
+│       ├── data
+│       │   ├── __init__.py
+│       │   ├── load.py
+│       │   └── preprocess.py
+│       ├── evaluation
+│       │   ├── __init__.py
+│       │   └── metrics.py
+│       ├── features
+│       │   ├── __init__.py
+│       │   └── indicators.py
+│       ├── inference
+│       │   ├── __init__.py
+│       │   └── predict.py
+│       ├── main.py
+│       ├── models
+│       │   ├── __init__.py
+│       │   ├── neural_net.py
+│       │   └── statistical.py
+│       ├── training
+│       │   ├── __init__.py
+│       │   └── train.py
+│       └── utils.py
+├── tests
+│   ├── __init__.py
+│   ├── test_data.py
+│   ├── test_features.py
+│   └── test_models.py
+├── trees
+│   ├── dep.txt
+│   └── proj.txt
+└── uv.lock
+
+19 directories, 31 files
