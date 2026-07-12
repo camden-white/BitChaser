@@ -1,4 +1,4 @@
-# Bitchaser
+# BitChaser
 
 ![Python](https://img.shields.io/badge/Python-3.14-blue)
 ![mypy](https://img.shields.io/badge/Type%20Checking-mypy-yellow)
@@ -22,13 +22,23 @@ BitChaser is a research project that investigates long-horizon and short-horizon
 - Reproducible research workflow
 - Documentation with MkDocs
 
+## Research Objectives
+
+BitChaser investigates questions including:
+
+- Can Bitcoin support and resistance be modeled statistically?
+- What periodic structures exist in BTC/USD?
+- How accurately can daily OHLC values be forecast?
+
 ---
 
 ## Installation
 
-Requirements
+### Requirements
 - Python 3.14
-- uv 0.11
+- uv
+
+### Steps
 
 Clone the repository
 
@@ -59,19 +69,7 @@ Launch Jupyter
 make notebook
 ```
 
-Serve documentation
-
-```bash
-make serve
-```
-
----
-
-## Documentation
-
-Documentation is built with MkDocs.
-
-Serve locally with
+Serve documentation (built with MkDocs)
 
 ```bash
 make serve

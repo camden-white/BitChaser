@@ -17,11 +17,12 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## [1.0.0] - 2026-07-09
+### [0.1.0] - 2026-07-11
+- Improved Makefile and workflow tools
+- Added update_section.py script to update any section and incorporated this functionality into Makefile (e.g. `make trees` -> updates project tree in CONTRIBUTING.md)
+- Improved GitHub workflows and TOML
 
-### Added
-- Initial public release.
-- Transformer implementation.
-- Dataset loader.
-- Training loop.
-- Inference API.
+---
+
+### [0.1.0] - 2026-07-10
+- Made backbone of structure including Makefile and documentation

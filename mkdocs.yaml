@@ -1,7 +1,7 @@
-site_name: Bitchaser
+site_name: BitChaser
 site_description: Bitcoin forecasting using statistics and time-series analysis
 site_author: Camden White
-repo_url: https://github.com/camden-white/Bitchaser
+repo_url: https://github.com/camden-white/BitChaser
 
 theme:
   name: material

@@ -1,20 +1,32 @@
 [project]
 name = "bitchaser"
 version = "0.1.0"
-description = "Add your description here"
+authors = [
+    { name = "Camden R. White" },
+]
+description = "Statistical research for forecasting BTC/USD OHLC market prices."
+keywords = [
+    "bitcoin",
+    "forecasting",
+    "machine-learning",
+    "statistics",
+    "time-series",
+]
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
     "pandas>=3.0.3",
 ]
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+
+[project.urls]
+Repository = "https://github.com/camden-white/BitChaser"
+Documentation = "https://camden-white.github.io/BitChaser/"
+Issues = "https://github.com/camden-white/BitChaser/issues"
 
 [dependency-groups]
 dev = [
-    "ipykernel>=7.3.0",
-    "ipython>=9.15.0",
-    "jupyter>=1.1.1",
-    "mkdocs>=1.6.1",
-    "mkdocs-material>=9.7.6",
     "mypy>=2.2.0",
     "pandas-stubs>=3.0.3.260530",
     "pre-commit>=4.6.0",
@@ -24,3 +36,60 @@ dev = [
     "types-python-dateutil>=2.9.0.20260518",
     "types-requests>=2.33.0.20260518",
 ]
+docs = [
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.7.6",
+]
+notebook = [
+    "ipykernel>=7.3.0",
+    "ipython>=9.15.0",
+    "jupyter>=1.1.1",
+]
+
+[build-system]
+requires = ["uv_build>=0.11.28,<0.12"]
+build-backend = "uv_build"
+
+[project.scripts]
+bitchaser = "bitchaser.main:main"
+
+[tool.ruff]
+line-length = 88
+src = ["src"]
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "B",
+    "UP",
+    "SIM",
+    "RUF",
+]
+
+[tool.mypy]
+python_version = "3.14"
+files = ["src", "tests", "scripts"]
+check_untyped_defs = true
+disallow_untyped_defs = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unreachable = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = [
+    "-ra",
+    "--strict-markers",
+    "--strict-config",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["bitchaser"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+fail_under = 80

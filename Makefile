@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: install update notebook docs serve lint lintfix formatcheck format typecheck fix test check coverage ci deptree projtree trees precommit run clean
+.PHONY: install update notebook docs serve lint lintfix formatcheck format fix typecheck test coverage check ci deptree projtree trees precommit run clean
 
 .DELETE_ON_ERROR:
 
@@ -25,12 +25,12 @@ help:
 	@echo "  lintfix      Auto-fix lint issues"
 	@echo "  formatcheck  Check code format"
 	@echo "  format       Format code to standards"
-	@echo "  typecheck    Type checking"
 	@echo "  fix          Auto-fix lint issues and format code to standards"
+	@echo "  typecheck    Type checking"
 	@echo "  test         Run tests"
-	@echo "  check        Lint, format check, type check, and tests"
 	@echo "  coverage     Run tests with coverage report"
-	@echo "  ci           Run checks and coverage"
+	@echo "  check        Lint, format check, type check, and run tests"
+	@echo "  ci           Lint, format check, type check, and run tests with coverage report"
 	@echo "  deptree      Make dependency tree"
 	@echo "  projtree     Make project tree"
 	@echo "  trees        Make all trees"
@@ -52,7 +52,7 @@ notebook:
 	$(RUN) jupyter lab
 
 docs:
-	$(RUN) mkdocs build
+	$(RUN) mkdocs build --strict
 
 serve:
 	$(RUN) mkdocs serve
@@ -77,15 +77,15 @@ typecheck:
 test:
 	$(PYTEST)
 
-check: lint formatcheck typecheck test
-
 coverage:
 	$(PYTEST) \
 		--cov=bitchaser \
 		--cov-report=term-missing \
 		--cov-report=html
 
-ci: lint formatcheck typecheck coverage
+check: lint formatcheck typecheck test
+
+ci: lint formatcheck typecheck coverage docs
 
 deptree:
 	mkdir -p trees
@@ -103,14 +103,14 @@ precommit: trees
 	$(RUN) pre-commit run --all-files
 
 run:
-	$(PYTHON) -m bitchaser.main
+	$(RUN) bitchaser
 
 clean:
-	find . -type d -name "__pycache__" -exec rm -rf {} +
-	find . -type f -name "*.pyc" -delete
-	find . -name ".DS_Store" -delete
-	find . -type d -name ".ipynb_checkpoints" -exec rm -rf {} +
-	find . -name "*.nbconvert.ipynb" -delete
+	find . -type d -name "__pycache__" -prune -exec rm -rf {} +
+	find . -type f -name "*.py[co]" -delete
+	find . -type f -name ".DS_Store" -delete
+	find . -type d -name ".ipynb_checkpoints" -prune -exec rm -rf {} +
+	find . -type f -name "*.nbconvert.ipynb" -delete
 	rm -rf .pytest_cache .mypy_cache .ruff_cache
 	rm -rf .coverage htmlcov
 	rm -rf dist build *.egg-info

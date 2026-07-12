@@ -1,23 +1,23 @@
 ## Development
 
 ### Workflow
-1. `git status` (optional)\
-Review unstaged changed files
-
-2. `make fix`\
+1. `make fix`\
 Auto-fix lint issues and format code to standards
 
-3. `make check` (or `make ci`)\
-Lint, format check, type check, and tests (and coverage)
+2. `make check` + `make test` (or `make ci`)\
+Lint, format check, type check, and run tests (with coverage)
 
-4. `make precommit`\
+3. `make precommit`\
 update trees, fix whitespace/newlines, run all hooks
 
-5. `git diff` (optional)\
-Review any changes since last commit (q to exit)
+4. `git status` (optional)\
+Review unstaged changed files
 
-6. `git add .`\
-Add all files for commit
+5. `git diff` (optional)\
+Review any unstaged changes (q to exit)
+
+6. `git add <files>`\
+Add files for commit
 
 7. `git commit -m "[message]"`\
 Commit files with message explaining change
@@ -44,8 +44,8 @@ Review commit logs
 | `format` | Format code to standards |
 | `typecheck` | Type checking |
 | `fix` | Auto-fix lint issues and format code to standards |
+| `check` | Lint, format check, and type check |
 | `test` | Run tests |
-| `check` | Lint, format check, type check, and tests |
 | `coverage` | Run tests with coverage report |
 | `ci` | Run checks and coverage |
 | `deptree` | Make dependency tree |
@@ -54,6 +54,13 @@ Review commit logs
 | `precommit` | Update trees, fix whitespace/newlines, run all hooks |
 | `run` | Run the application |
 | `clean` | Remove generated files |
+
+### Coding Conventions
+
+- Follow PEP 8 and use Ruff for formatting and linting with `make formatcheck`, `make lint`, and `make fix`.
+- Add type hints to all public functions and methods.
+- Write concise docstrings for all public modules, classes, and functions.
+- Keep code DRY.
 
 ---
 
@@ -77,6 +84,7 @@ Review commit logs
 .
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
+├── LICENSE
 ├── Makefile
 ├── README.md
 ├── data

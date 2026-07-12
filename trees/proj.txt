@@ -1,6 +1,7 @@
 .
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
+├── LICENSE
 ├── Makefile
 ├── README.md
 ├── data
