@@ -34,6 +34,6 @@ bitchaser v0.1.0
 │   └── pytest v9.1.1 (*)
 ├── ruff v0.15.21 (group: dev)
 ├── types-python-dateutil v2.9.0.20260518 (group: dev)
-└── types-requests v2.33.0.20260518 (group: dev)
+└── types-requests v2.33.0.20260712 (group: dev)
     └── urllib3 v2.7.0
 (*) Package tree already displayed

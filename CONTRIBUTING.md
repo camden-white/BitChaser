@@ -123,6 +123,7 @@ Review commit logs
 │       │   ├── __init__.py
 │       │   ├── neural_net.py
 │       │   └── statistical.py
+│       ├── py.typed
 │       ├── training
 │       │   ├── __init__.py
 │       │   └── train.py
@@ -131,7 +132,8 @@ Review commit logs
 │   ├── __init__.py
 │   ├── test_data.py
 │   ├── test_features.py
-│   └── test_models.py
+│   ├── test_models.py
+│   └── test_package.py
 └── uv.lock
 
 ```
