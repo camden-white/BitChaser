@@ -15,7 +15,7 @@ UPDATE_SECTION = $(PYTHON) scripts/update_section.py
 
 help:
 	@echo "Available targets:"
-	@echo "  help         Print Makefile targets"
+	@echo "  help         Explain Makefile targets"
 	@echo "  install      Install project dependencies"
 	@echo "  update       Upgrade dependencies"
 	@echo "  notebook     Jupyter notebook"

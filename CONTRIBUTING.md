@@ -35,19 +35,20 @@ Review commit logs
 | `help` | Explain Makefile targets |
 | `install` | Install project dependencies |
 | `update` | Upgrade dependencies |
-| `notebook` | Jupyter notebook |
+| `notebook` | Launch Jupyter notebook in browser |
 | `docs` | Build documentation |
 | `serve` | Serve documentation |
 | `lint` | Code linting |
 | `lintfix` | Auto-fix lint issues |
 | `formatcheck` | Check code format |
 | `format` | Format code to standards |
-| `typecheck` | Type checking |
 | `fix` | Auto-fix lint issues and format code to standards |
-| `check` | Lint, format check, and type check |
+| `typecheck` | Type checking |
+| `static` | Run static checks |
 | `test` | Run tests |
+| `check` | Run static checks and run tests |
 | `coverage` | Run tests with coverage report |
-| `ci` | Run checks and coverage |
+| `ci` | Run full CI validation |
 | `deptree` | Make dependency tree |
 | `projtree` | Make project tree |
 | `trees` | Make all trees |
@@ -98,6 +99,7 @@ Review commit logs
 ├── mkdocs.yaml
 ├── models
 ├── notebooks
+│   └── 01_data_exploration.ipynb
 ├── pyproject.toml
 ├── reports
 │   └── figures

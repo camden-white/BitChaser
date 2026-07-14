@@ -15,6 +15,7 @@
 ├── mkdocs.yaml
 ├── models
 ├── notebooks
+│   └── 01_data_exploration.ipynb
 ├── pyproject.toml
 ├── reports
 │   └── figures

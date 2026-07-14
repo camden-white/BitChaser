@@ -27,6 +27,7 @@ Issues = "https://github.com/camden-white/BitChaser/issues"
 
 [dependency-groups]
 dev = [
+    "jupyterlab>=4.6.1",
     "mkdocs>=1.6.1",
     "mkdocs-material>=9.7.6",
     "mypy>=2.2.0",
