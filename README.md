@@ -8,7 +8,7 @@
 ![License](https://img.shields.io/badge/License-Apache%202.0-green)
 
 <!-- Description -->
-BitChaser is a research project that investigates long-horizon and short-horizon forecasting of the Bitcoin (BTC/USD) market using statistical modeling and deep learning. The project analyzes historical daily OHLC data, develops interpretable long-horizon forecasting models along with short-horizon time-series prediction models.
+BitChaser is a research project that investigates long-horizon and short-horizon forecasting of the price of Bitcoin (BTC/USD) using periodic regressions for long-horizon modeling and time-series analysis for short-horizon forcasting. The project analyzes historical daily OHLC data and relevant financial statistics.
 
 ## Status
 
@@ -57,13 +57,13 @@ make install
 
 ## Usage
 
-Run the main program
+Run the BitChaser application
 
 ```bash
 make run
 ```
 
-Launch Jupyter
+Launch Jupyter in browser
 
 ```bash
 make notebook
