@@ -106,8 +106,6 @@ Review commit logs
 │   ├── about.md
 │   ├── assets
 │   │   └── images
-│   │       ├── banner.png
-│   │       ├── bitcoin-B.webp
 │   │       ├── favicon-v3.webp
 │   │       └── logo.png
 │   ├── index.md

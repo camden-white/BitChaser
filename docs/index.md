@@ -8,7 +8,7 @@ hide:
 
 <p class="bc-eyebrow">Bitcoin Price Forecasting</p>
 
-# Understand the patterns.
+# Decrypt the cycle.
 
 <p class="bc-subtitle">
 BitChaser explores short-horizon OHLC time-series analysis and long-horizon periodic models of BTC/USD market ratio
