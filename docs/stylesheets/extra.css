@@ -147,7 +147,7 @@
 .md-typeset h1 {
   margin-bottom: 1.2rem;
   color: var(--md-default-fg-color);
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2rem, 5.2vw, 3rem);
   font-weight: 700;
   line-height: 0.98;
   letter-spacing: -0.02em;
@@ -156,7 +156,7 @@
 .md-typeset h2 {
   margin-top: 3.5rem;
   color: var(--md-default-fg-color);
-  font-size: clamp(1.6rem, 4vw, 2rem);
+  font-size: clamp(1.5rem, 3.9vw, 2rem);
   font-weight: 650;
   line-height: 1.08;
   letter-spacing: -0.02em;
@@ -346,7 +346,7 @@
   max-width: 720px;
   margin: 1.75rem auto 0;
   color: var(--md-default-fg-color--light) !important;
-  font-size: clamp(0.8rem, 2vw, 1rem);
+  font-size: clamp(0.7rem, 1.75vw, 1rem);
   line-height: 1.45;
   letter-spacing: -0.02em;
 }
