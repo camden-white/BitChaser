@@ -1,0 +1,51 @@
+% --------------------------------------------------
+% Packages
+% --------------------------------------------------
+
+% \usepackage[T1]{fontenc}
+% \usepackage[utf8]{inputenc}
+
+% Favorite font - Similare to "How To Prove It"
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{esint}
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{enumitem}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink]{cleveref}
+
+% --------------------------------------------------
+% Theorem environments
+% --------------------------------------------------
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% --------------------------------------------------
+% Custom commands
+% --------------------------------------------------
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator{\Var}{\mathrm{Var}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+
+\newcommand*{\mathb}[1]{\pmb{#1}} % general bold

@@ -140,14 +140,14 @@
 /* Large, clean typography */
 .md-typeset {
   color: var(--md-default-fg-color);
-  font-size: 0.82rem;
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
   line-height: 1.65;
 }
 
 .md-typeset h1 {
   margin-bottom: 1.2rem;
   color: var(--md-default-fg-color);
-  font-size: clamp(2rem, 5.2vw, 3rem);
+  font-size: clamp(0rem, 7.5vw, 3rem);
   font-weight: 700;
   line-height: 0.98;
   letter-spacing: -0.02em;
@@ -156,7 +156,7 @@
 .md-typeset h2 {
   margin-top: 3.5rem;
   color: var(--md-default-fg-color);
-  font-size: clamp(1.5rem, 3.9vw, 2rem);
+  font-size: clamp(0rem, 5vw, 2rem);
   font-weight: 650;
   line-height: 1.08;
   letter-spacing: -0.02em;
@@ -165,7 +165,7 @@
 .md-typeset h3 {
   margin-top: 2.5rem;
   color: var(--md-default-fg-color);
-  font-size: 1.35rem;
+  font-size: clamp(0rem, 2.5vw, 1rem);
   font-weight: 600;
   letter-spacing: -0.02em;
 }
@@ -346,9 +346,9 @@
   max-width: 720px;
   margin: 1.75rem auto 0;
   color: var(--md-default-fg-color--light) !important;
-  font-size: clamp(0.7rem, 1.75vw, 1rem);
+  font-size: clamp(0rem, 2.5vw, 1rem);
   line-height: 1.45;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .bc-actions {
@@ -366,7 +366,7 @@
   min-height: 44px;
   padding: 0.65rem 1.25rem;
   border-radius: 999px;
-  font-size: 0.78rem;
+  font-size: clamp(0rem, 2.8vw, 0.8rem);
   font-weight: 600;
   text-decoration: none !important;
   transition:

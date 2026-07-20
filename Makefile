@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help install update notebook docs serve lint lintfix formatcheck format fix typecheck static test coverage check ci deptree projtree trees precommit run clean
+.PHONY: help install data snapshot update report notebook docs serve lint lintfix formatcheck format fix typecheck static test coverage check ci deptree projtree trees precommit run clean
 
 .DELETE_ON_ERROR:
 
@@ -16,7 +16,10 @@ help:
 	@echo "Available targets:"
 	@echo "  help         Explain Makefile targets"
 	@echo "  install      Install project dependencies"
+	@echo "  data         Update local BTC data through yesterday"
+	@echo "  snapshot     Create the fixed 16-year research snapshot"
 	@echo "  update       Upgrade dependencies"
+	@echo "  report       Copy updated report to Reports/ directory"
 	@echo "  notebook     Jupyter notebook"
 	@echo "  docs         Build documentation"
 	@echo "  serve        Serve documentation"
@@ -43,11 +46,22 @@ install:
 	$(RUN) pre-commit install
 	$(MAKE) trees
 
+data:
+	$(PYTHON) scripts/update_data.py
+
+snapshot:
+	$(PYTHON) scripts/create_snapshot.py
+
 update:
 	$(MAN) lock --upgrade
 	$(RUN) pre-commit autoupdate
 	$(MAN) sync --all-groups
 	$(MAKE) trees
+
+report:
+	@test -f reports/latex/build/report.pdf || \
+		(echo "Error: reports/latex/build/report.pdf does not exist. Build the LaTeX document first."; exit 1)
+	cp reports/latex/build/report.pdf reports/Report.pdf
 
 notebook:
 	$(RUN) jupyter lab

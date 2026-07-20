@@ -15,9 +15,12 @@ keywords = [
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "cryptodatapy>=0.3.3",
+    "httpx>=0.28.1",
     "pandas>=3.0.3",
     "pyarrow>=25.0.0",
     "pytest>=9.1.1",
+    "python-dotenv>=1.2.2",
 ]
 license = "Apache-2.0"
 license-files = ["LICENSE"]
@@ -45,6 +48,7 @@ docs = [
 notebook = [
     "ipykernel>=7.3.0",
     "jupyterlab>=4.6.1",
+    "matplotlib>=3.11.0",
 ]
 
 [tool.uv]

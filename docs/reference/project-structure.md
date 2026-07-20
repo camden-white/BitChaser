@@ -14,11 +14,15 @@
 ├── Makefile
 ├── README.md
 ├── SECURITY.md
-├── analysis
 ├── data
+│   ├── archive
+│   │   └── btcusd_ohlc_kaggle_2010-07-17_2024-06-27.csv
 │   ├── processed
-│   └── raw
-│       └── BTCUSD_OHLC.csv
+│   │   └── btc_daily_latest.parquet
+│   ├── raw
+│   │   └── cryptocompare_btc_usd_daily.parquet
+│   └── snapshots
+│       └── btc_daily_2010-07-17_2026-07-16.parquet
 ├── docs
 │   ├── about.md
 │   ├── assets
@@ -44,13 +48,42 @@
 ├── mkdocs.yaml
 ├── models
 ├── notebooks
-│   ├── 01_data_exploration.ipynb
-│   └── 02_data_exploration.ipynb
+│   └── 01_data_exploration.ipynb
 ├── pyproject.toml
 ├── reports
-│   └── figures
+│   ├── Report.pdf
+│   ├── figures
+│   └── latex
+│       ├── build
+│       │   ├── report.aux
+│       │   ├── report.bbl
+│       │   ├── report.blg
+│       │   ├── report.fdb_latexmk
+│       │   ├── report.fls
+│       │   ├── report.log
+│       │   ├── report.out
+│       │   ├── report.pdf
+│       │   ├── report.synctex.gz
+│       │   ├── report.toc
+│       │   └── sections
+│       ├── preamble.tex
+│       ├── references.bib
+│       ├── report.tex
+│       └── sections
+│           ├── abstract.tex
+│           ├── background.tex
+│           ├── conclusion.tex
+│           ├── data.tex
+│           ├── discussion.tex
+│           ├── exploratory.tex
+│           ├── introduction.tex
+│           ├── methods.tex
+│           ├── models.tex
+│           └── results.tex
 ├── scripts
-│   ├── preprocess_data.py
+│   ├── create_plots.py
+│   ├── create_snapshot.py
+│   ├── update_data.py
 │   └── update_section.py
 ├── src
 │   └── bitchaser
@@ -58,8 +91,10 @@
 │       ├── config.py
 │       ├── data
 │       │   ├── __init__.py
+│       │   ├── cryptocompare.py
 │       │   ├── load.py
-│       │   └── preprocess.py
+│       │   ├── preprocess.py
+│       │   └── update.py
 │       ├── evaluation
 │       │   ├── __init__.py
 │       │   └── metrics.py

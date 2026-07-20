@@ -1,7 +1,7 @@
 # BitChaser
 
 [![CI](https://github.com/camden-white/BitChaser/actions/workflows/ci.yaml/badge.svg)](https://github.com/camden-white/BitChaser/actions/workflows/ci.yaml)
-[![Python](https://img.shields.io/badge/Python-3.14-blue)](https://docs.python.org/3.13/)
+[![Python](https://img.shields.io/badge/Python-3.14-blue)](https://docs.python.org/3.14/)
 [![Docs](https://img.shields.io/badge/Docs-MkDocs-526CFE)](https://camden-white.github.io/BitChaser/)
 ![Status](https://img.shields.io/badge/Status-Active%20Development-orange)
 [![License](https://img.shields.io/badge/License-Apache%202.0-776294)](LICENSE)
