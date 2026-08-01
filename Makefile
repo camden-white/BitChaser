@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help install data snapshot update report notebook docs serve lint lintfix formatcheck format fix typecheck static test coverage check ci deptree projtree trees precommit run clean
+.PHONY: help install data snapshot clean-snapshot update report notebook docs serve lint lintfix formatcheck format fix typecheck static test coverage check ci deptree projtree trees precommit run run-research clean
 
 .DELETE_ON_ERROR:
 
@@ -49,8 +49,16 @@ install:
 data:
 	$(PYTHON) scripts/update_data.py
 
-snapshot:
+snapshot: clean-snapshot
+	mkdir -p data/snapshot/
 	$(PYTHON) scripts/create_snapshot.py
+
+snapshot-research: clean-snapshot
+	mkdir -p data/snapshot/
+	cp data/research/btc_daily_2010-07-17_2026-07-17.parquet data/snapshot/
+
+clean-snapshot:
+	rm -rf data/snapshot/*
 
 update:
 	$(MAN) lock --upgrade
@@ -122,6 +130,8 @@ precommit: trees
 
 run:
 	$(RUN) bitchaser
+
+run-research: snapshot-research run
 
 clean:
 	find . -type d -name "__pycache__" -prune -exec rm -rf {} +

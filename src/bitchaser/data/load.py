@@ -1,17 +1,15 @@
-"""Functions for loading raw and processed market data."""
+"""Functions for loading processed Bitcoin market data."""
 
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Final
 
 import pandas as pd
 
-from bitchaser.config import (
-    BTC_16_YEAR_SNAPSHOT_PATH,
-    LATEST_BTC_DAILY_PATH,
-)
+from bitchaser.config import LATEST_BTC_DAILY_PATH, SNAPSHOT_DATA_DIR
 
-REQUIRED_COLUMNS = [
+REQUIRED_COLUMNS: Final[tuple[str, ...]] = (
     "date",
     "days",
     "open",
@@ -20,16 +18,34 @@ REQUIRED_COLUMNS = [
     "close",
     "volume_btc",
     "volume_usd",
-]
+)
+
+
+def to_utc_timestamp(
+    value: str | pd.Timestamp,
+) -> pd.Timestamp:
+    """Convert a date-like value to a UTC-aware timestamp."""
+    timestamp = pd.Timestamp(value)
+
+    if timestamp.tzinfo is None:
+        return timestamp.tz_localize("UTC")
+
+    return timestamp.tz_convert("UTC")
 
 
 def load_btc_daily(
     *,
     path: Path,
-    start: str | None = None,
-    end: str | None = None,
+    start: str | pd.Timestamp | None = None,
+    end: str | pd.Timestamp | None = None,
 ) -> pd.DataFrame:
-    """Load a locally stored BTC/USD daily dataset."""
+    """
+    Load a locally stored Bitcoin daily dataset.
+
+    The required price columns are validated, while all
+    additional columns—such as block_height, block_era,
+    difficulty, hashrate, and block_time—are preserved.
+    """
     if not path.exists():
         raise FileNotFoundError(f"Data was not found at {path}.")
 
@@ -39,9 +55,11 @@ def load_btc_daily(
 
     if missing_columns:
         missing = ", ".join(sorted(missing_columns))
+
         raise ValueError(f"Dataset is missing columns: {missing}")
 
-    frame = frame.loc[:, REQUIRED_COLUMNS].copy()
+    # Preserve every column stored in the Parquet file.
+    frame = frame.copy()
 
     frame["date"] = pd.to_datetime(
         frame["date"],
@@ -50,11 +68,13 @@ def load_btc_daily(
     )
 
     if start is not None:
-        start_date = pd.Timestamp(start, tz="UTC")
+        start_date = to_utc_timestamp(start)
+
         frame = frame.loc[frame["date"] >= start_date]
 
     if end is not None:
-        end_date = pd.Timestamp(end, tz="UTC")
+        end_date = to_utc_timestamp(end)
+
         frame = frame.loc[frame["date"] <= end_date]
 
     return frame.sort_values("date").reset_index(drop=True)
@@ -62,10 +82,10 @@ def load_btc_daily(
 
 def load_latest(
     *,
-    start: str | None = None,
-    end: str | None = None,
+    start: str | pd.Timestamp | None = None,
+    end: str | pd.Timestamp | None = None,
 ) -> pd.DataFrame:
-    """Load the most recently generated BTC dataset."""
+    """Load the most recently generated Bitcoin dataset."""
     return load_btc_daily(
         path=LATEST_BTC_DAILY_PATH,
         start=start,
@@ -74,7 +94,10 @@ def load_latest(
 
 
 def load_snapshot() -> pd.DataFrame:
-    """Load the fixed 16-year BitChaser research dataset."""
-    return load_btc_daily(
-        path=BTC_16_YEAR_SNAPSHOT_PATH,
-    )
+    """Load the cashed snapshot."""
+    try:
+        snapshot_path = next(f for f in SNAPSHOT_DATA_DIR.iterdir() if f.is_file())
+    except StopIteration:
+        print("ERROR: Snapshot not found. Run `make snapshot` first.")
+        quit()
+    return load_btc_daily(path=snapshot_path)

@@ -17,6 +17,13 @@ All functional changes to this project will be documented in this file.
 
 ---
 
+## [0.2.0] - 2026-07-20
+
+### Added
+- LaTeX report
+
+---
+
 ## [0.1.0] - 2026-07-14
 
 ### Added

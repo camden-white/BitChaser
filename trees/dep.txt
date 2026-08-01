@@ -5,7 +5,7 @@ bitchaser v0.1.0
 │   │   │   └── pycares v5.0.1
 │   │   │       └── cffi v2.1.0
 │   │   │           └── pycparser v3.0
-│   │   ├── aiohttp v3.14.1
+│   │   ├── aiohttp v3.14.3
 │   │   │   ├── aiohappyeyeballs v2.7.1
 │   │   │   ├── aiosignal v1.4.0
 │   │   │   │   └── frozenlist v1.8.0
@@ -13,7 +13,7 @@ bitchaser v0.1.0
 │   │   │   ├── frozenlist v1.8.0
 │   │   │   ├── multidict v6.7.1
 │   │   │   ├── propcache v0.5.2
-│   │   │   └── yarl v1.24.2
+│   │   │   └── yarl v1.24.5
 │   │   │       ├── idna v3.18
 │   │   │       ├── multidict v6.7.1
 │   │   │       └── propcache v0.5.2
@@ -27,7 +27,7 @@ bitchaser v0.1.0
 │   │   │   └── urllib3 v2.7.0
 │   │   ├── setuptools v83.0.0
 │   │   ├── typing-extensions v4.16.0
-│   │   └── yarl v1.24.2 (*)
+│   │   └── yarl v1.24.5 (*)
 │   ├── coinmetrics-api-client v2024.12.23.19
 │   │   ├── orjson v3.11.9
 │   │   ├── python-dateutil v2.9.0.post0
@@ -44,16 +44,16 @@ bitchaser v0.1.0
 │   │   └── websocket-client v1.9.0
 │   ├── cryptodatapy-pandas-datareader v0.10.1.post1
 │   │   ├── lxml v6.1.1
-│   │   ├── pandas v3.0.3
+│   │   ├── pandas v3.0.5
 │   │   │   ├── numpy v2.5.1
 │   │   │   └── python-dateutil v2.9.0.post0 (*)
 │   │   └── requests v2.34.2 (*)
 │   ├── dbnomics v1.2.7
-│   │   ├── pandas v3.0.3 (*)
+│   │   ├── pandas v3.0.5 (*)
 │   │   ├── requests v2.34.2 (*)
 │   │   └── tenacity v9.1.4
 │   ├── fsspec v2026.6.0
-│   ├── matplotlib v3.11.0
+│   ├── matplotlib v3.11.1
 │   │   ├── contourpy v1.3.3
 │   │   │   └── numpy v2.5.1
 │   │   ├── cycler v0.12.1
@@ -67,24 +67,24 @@ bitchaser v0.1.0
 │   ├── numpy v2.5.1
 │   ├── openpyxl v3.1.5
 │   │   └── et-xmlfile v2.0.0
-│   ├── pandas v3.0.3 (*)
+│   ├── pandas v3.0.5 (*)
 │   ├── polygon-api-client v1.16.3
 │   │   ├── certifi v2025.11.12
 │   │   ├── urllib3 v2.7.0
-│   │   └── websockets v16.1
+│   │   └── websockets v16.1.1
 │   ├── prophet v1.3.0
 │   │   ├── cmdstanpy v1.3.0
 │   │   │   ├── numpy v2.5.1
-│   │   │   ├── pandas v3.0.3 (*)
+│   │   │   ├── pandas v3.0.5 (*)
 │   │   │   ├── stanio v0.5.1
 │   │   │   │   └── numpy v2.5.1
 │   │   │   └── tqdm v4.69.0
-│   │   ├── holidays v0.100
+│   │   ├── holidays v0.101
 │   │   │   └── python-dateutil v2.9.0.post0 (*)
 │   │   ├── importlib-resources v7.1.0
-│   │   ├── matplotlib v3.11.0 (*)
+│   │   ├── matplotlib v3.11.1 (*)
 │   │   ├── numpy v2.5.1
-│   │   ├── pandas v3.0.3 (*)
+│   │   ├── pandas v3.0.5 (*)
 │   │   └── tqdm v4.69.0
 │   ├── pyarrow v25.0.0
 │   ├── requests v2.34.2 (*)
@@ -94,7 +94,7 @@ bitchaser v0.1.0
 │   │   └── urllib3 v2.7.0
 │   ├── s3fs v2026.6.0
 │   │   ├── aiobotocore v3.8.0
-│   │   │   ├── aiohttp v3.14.1 (*)
+│   │   │   ├── aiohttp v3.14.3 (*)
 │   │   │   ├── aioitertools v0.13.0
 │   │   │   ├── botocore v1.43.46
 │   │   │   │   ├── jmespath v1.1.0
@@ -104,7 +104,7 @@ bitchaser v0.1.0
 │   │   │   ├── multidict v6.7.1
 │   │   │   ├── python-dateutil v2.9.0.post0 (*)
 │   │   │   └── wrapt v2.2.2
-│   │   ├── aiohttp v3.14.1 (*)
+│   │   ├── aiohttp v3.14.3 (*)
 │   │   └── fsspec v2026.6.0
 │   ├── selenium v4.39.0
 │   │   ├── certifi v2025.11.12
@@ -127,7 +127,7 @@ bitchaser v0.1.0
 │   ├── statsmodels v0.14.6
 │   │   ├── numpy v2.5.1
 │   │   ├── packaging v26.2
-│   │   ├── pandas v3.0.3 (*)
+│   │   ├── pandas v3.0.5 (*)
 │   │   ├── patsy v1.0.2
 │   │   │   └── numpy v2.5.1
 │   │   └── scipy v1.18.0
@@ -141,7 +141,7 @@ bitchaser v0.1.0
 │   ├── xlrd v2.0.2
 │   └── yfinance v0.2.64
 │       ├── beautifulsoup4 v4.15.0
-│       │   ├── soupsieve v2.8.4
+│       │   ├── soupsieve v2.9.1
 │       │   └── typing-extensions v4.16.0
 │       ├── curl-cffi v0.15.0
 │       │   ├── certifi v2025.11.12
@@ -150,13 +150,13 @@ bitchaser v0.1.0
 │       ├── frozendict v2.4.7
 │       ├── multitasking v0.0.13
 │       ├── numpy v2.5.1
-│       ├── pandas v3.0.3 (*)
+│       ├── pandas v3.0.5 (*)
 │       ├── peewee v4.2.6
-│       ├── platformdirs v4.10.0
+│       ├── platformdirs v4.11.0
 │       ├── protobuf v7.35.1
 │       ├── pytz v2026.2
 │       ├── requests v2.34.2 (*)
-│       └── websockets v16.1
+│       └── websockets v16.1.1
 ├── httpx v0.28.1
 │   ├── anyio v4.14.2
 │   │   └── idna v3.18
@@ -165,7 +165,7 @@ bitchaser v0.1.0
 │   │   ├── certifi v2025.11.12
 │   │   └── h11 v0.16.0
 │   └── idna v3.18
-├── pandas v3.0.3 (*)
+├── pandas v3.0.5 (*)
 ├── pyarrow v25.0.0
 ├── pytest v9.1.1
 │   ├── iniconfig v2.3.0
@@ -173,6 +173,7 @@ bitchaser v0.1.0
 │   ├── pluggy v1.6.0
 │   └── pygments v2.20.0
 ├── python-dotenv v1.2.2
+├── statsmodels v0.14.6 (*)
 ├── mypy v2.3.0 (group: dev)
 │   ├── ast-serialize v0.6.0
 │   ├── librt v0.13.0
@@ -181,18 +182,18 @@ bitchaser v0.1.0
 │   └── typing-extensions v4.16.0
 ├── pandas-stubs v3.0.3.260530 (group: dev)
 │   └── numpy v2.5.1
-├── pre-commit v4.6.0 (group: dev)
+├── pre-commit v4.6.1 (group: dev)
 │   ├── cfgv v3.5.0
 │   ├── identify v2.6.19
 │   ├── nodeenv v1.10.0
 │   ├── pyyaml v6.0.3
-│   └── virtualenv v21.6.1
+│   └── virtualenv v21.7.0
 │       ├── distlib v0.4.3
-│       ├── filelock v3.30.3
-│       ├── platformdirs v4.10.0
-│       └── python-discovery v1.4.4
-│           ├── filelock v3.30.3
-│           └── platformdirs v4.10.0
+│       ├── filelock v3.32.0
+│       ├── platformdirs v4.11.0
+│       └── python-discovery v1.5.0
+│           ├── filelock v3.32.0
+│           └── platformdirs v4.11.0
 ├── pytest v9.1.1 (group: dev) (*)
 ├── pytest-cov v7.1.0 (group: dev)
 │   ├── coverage v7.15.2
@@ -213,7 +214,7 @@ bitchaser v0.1.0
 │   ├── mergedeep v1.3.4
 │   ├── mkdocs-get-deps v0.2.2
 │   │   ├── mergedeep v1.3.4
-│   │   ├── platformdirs v4.10.0
+│   │   ├── platformdirs v4.11.0
 │   │   └── pyyaml v6.0.3
 │   ├── packaging v26.2
 │   ├── pathspec v1.1.1
@@ -260,7 +261,7 @@ bitchaser v0.1.0
 │   │   └── traitlets v5.15.1
 │   ├── jupyter-client v8.9.1
 │   │   ├── jupyter-core v5.9.1
-│   │   │   ├── platformdirs v4.10.0
+│   │   │   ├── platformdirs v4.11.0
 │   │   │   └── traitlets v5.15.1
 │   │   ├── python-dateutil v2.9.0.post0 (*)
 │   │   ├── pyzmq v27.1.0
@@ -275,7 +276,7 @@ bitchaser v0.1.0
 │   ├── pyzmq v27.1.0
 │   ├── tornado v6.5.7
 │   └── traitlets v5.15.1
-├── jupyterlab v4.6.1 (group: notebook)
+├── jupyterlab v4.6.2 (group: notebook)
 │   ├── async-lru v2.3.0
 │   ├── httpx v0.28.1 (*)
 │   ├── ipykernel v7.3.0 (*)
@@ -338,7 +339,7 @@ bitchaser v0.1.0
 │   │       │   ├── jupyter-core v5.9.1 (*)
 │   │       │   ├── jupyterlab-pygments v0.3.0
 │   │       │   ├── markupsafe v3.0.3
-│   │       │   ├── mistune v3.3.3
+│   │       │   ├── mistune v3.3.4
 │   │       │   ├── nbclient v0.11.0
 │   │       │   │   ├── jupyter-client v8.9.1 (*)
 │   │       │   │   ├── jupyter-core v5.9.1 (*)
@@ -380,5 +381,5 @@ bitchaser v0.1.0
 │   ├── packaging v26.2
 │   ├── tornado v6.5.7
 │   └── traitlets v5.15.1
-└── matplotlib v3.11.0 (group: notebook) (*)
+└── matplotlib v3.11.1 (group: notebook) (*)
 (*) Package tree already displayed

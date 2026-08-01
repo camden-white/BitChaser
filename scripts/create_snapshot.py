@@ -1,40 +1,34 @@
 #!/usr/bin/env python
 
-"""Create the fixed 16-year research snapshot."""
+"""Create or replace the fixed 16-year research snapshot."""
 
 from __future__ import annotations
 
 import pandas as pd
 
-from bitchaser.config import BTC_16_YEAR_SNAPSHOT_PATH
+from bitchaser.config import SNAPSHOT_DATA_DIR
 from bitchaser.data.load import load_latest
 from bitchaser.data.update import write_parquet_atomically
 
-START_DATE = "2010-07-17"
-END_DATE = "2026-07-16"
-EXPECTED_OBSERVATIONS = 5_844
-
 
 def main() -> None:
-    """Create the immutable 16-year research snapshot."""
-    if BTC_16_YEAR_SNAPSHOT_PATH.exists():
-        raise FileExistsError(
-            "The research snapshot already exists. "
-            "Delete it manually only if you intentionally "
-            "want to recreate it."
-        )
+    """Create or replace the snapshot."""
+
+    print("Enter start and end dates for snapshot (YYYY-MM-DD)")
+    start_date = input("Start Date: ")
+    end_date = input("End Date: ")
 
     snapshot = load_latest(
-        start=START_DATE,
-        end=END_DATE,
+        start=start_date,
+        end=end_date,
     )
 
     expected_start = pd.Timestamp(
-        START_DATE,
+        start_date,
         tz="UTC",
     )
     expected_end = pd.Timestamp(
-        END_DATE,
+        end_date,
         tz="UTC",
     )
 
@@ -51,24 +45,18 @@ def main() -> None:
         raise RuntimeError(
             f"Expected last date {expected_end.date()}, "
             f"but found {actual_end.date()}. "
-            "Run `make data` first."
+            "Run `make data` to update dataset."
         )
 
-    if len(snapshot) != EXPECTED_OBSERVATIONS:
-        raise RuntimeError(
-            f"Expected {EXPECTED_OBSERVATIONS:,} observations, "
-            f"but found {len(snapshot):,}."
-        )
+    snapshot_file = f"btc_daily_{start_date}_{end_date}.parquet"
+    snapshot_path = SNAPSHOT_DATA_DIR / snapshot_file
 
     write_parquet_atomically(
         snapshot,
-        BTC_16_YEAR_SNAPSHOT_PATH,
+        snapshot_path,
     )
 
-    print(
-        f"Created snapshot with {len(snapshot):,} observations at "
-        f"{BTC_16_YEAR_SNAPSHOT_PATH}"
-    )
+    print(f"Created snapshot with {len(snapshot):,} observations at {snapshot_path}")
 
 
 if __name__ == "__main__":

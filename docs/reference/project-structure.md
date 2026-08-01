@@ -16,13 +16,16 @@
 ├── SECURITY.md
 ├── data
 │   ├── archive
-│   │   └── btcusd_ohlc_kaggle_2010-07-17_2024-06-27.csv
+│   │   ├── BTC_BLOCKCHAIN_DAILY.parquet
+│   │   └── BTC_BLOCKCHAIN_DAILY_RAW.parquet
 │   ├── processed
 │   │   └── btc_daily_latest.parquet
 │   ├── raw
 │   │   └── cryptocompare_btc_usd_daily.parquet
-│   └── snapshots
-│       └── btc_daily_2010-07-17_2026-07-16.parquet
+│   ├── research
+│   │   └── btc_daily_2010-07-17_2026-07-17.parquet
+│   └── snapshot
+│       └── btc_daily_2010-07-17_2026-07-27.parquet
 ├── docs
 │   ├── about.md
 │   ├── assets
@@ -48,6 +51,7 @@
 ├── mkdocs.yaml
 ├── models
 ├── notebooks
+│   ├── 00_data_archive.ipynb
 │   └── 01_data_exploration.ipynb
 ├── pyproject.toml
 ├── reports

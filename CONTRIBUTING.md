@@ -48,6 +48,7 @@ make serve
 | `help` | Explain Makefile targets |
 | `install` | Install project dependencies |
 | `update` | Upgrade dependencies |
+| `report` | Copy updated report to Report/ |
 | `notebook` | Launch Jupyter notebook in browser |
 | `docs` | Build documentation |
 | `serve` | Serve documentation |

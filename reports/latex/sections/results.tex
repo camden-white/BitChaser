@@ -1,1 +1,35 @@
-Present theorems, proofs, experiments, and empirical findings.
+Log-log model
+\begin{equation}
+    P
+    \ =\ AY^m \cdot \varepsilon_\text{cycle}\cdot \varepsilon_\text{events}\cdot \varepsilon_\text{other}
+\end{equation}
+
+Damped tilted sinusoidal model
+\begin{equation}
+    \ln{\varepsilon_\text{cycle}}
+    \ =\
+    \frac{B}{Y^m}\cdot
+    \left\{
+    \begin{matrix}
+        -\cos[\pi c(Y)/p],\hfill & 0\leq c(Y) < p\hfill
+        \\[6pt]
+        \cos[\pi(c(Y) - p)/(1-p)],\hfill & p\leq c(Y) <1\hfill
+    \end{matrix}
+    \right.
+\end{equation}
+\begin{equation*}
+    c(Y)
+    \ =\
+    \frac{Y-h}{T}\ \mathrm{mod}\ 1
+\end{equation*}
+
+\begin{equation}
+    \ln{\varepsilon_\text{events}}
+    \ =\ f(\text{good} - \text{bad})
+\end{equation}
+
+Full model
+\begin{equation}
+    \ln{P}
+    \ =\ \ln{A} + m\ln(Y) + \frac{B}{Y^m}\cos\frac{\pi c(Y)}{1}
+\end{equation}

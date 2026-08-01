@@ -46,6 +46,6 @@ BitChaser explores short-horizon OHLC time-series analysis<br>and long-horizon p
 
 -   **Power-law trend**
 
-    95% of the variance in BTC/USD is accounted for by a power-law relationship. Both bear support and bull resistance extremes respect parallel power-laws.
+    96% of the relative variance in BTC/USD is accounted for by a power-law relationship. The other 4% is due to periodic trends and world events.
 
 </div>
